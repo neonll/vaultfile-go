@@ -1,4 +1,4 @@
-module jemmic.com/vaultfile-go
+module neonll.com/vaultfile-go
 
 go 1.24.2
 

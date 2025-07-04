@@ -8,7 +8,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"jemmic.com/vaultfile-go/pkg/vault"
+	"neonll.com/vaultfile-go/pkg/vault"
 )
 
 var (

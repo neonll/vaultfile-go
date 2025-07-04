@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"jemmic.com/vaultfile-go/internal/crypto"
+	"neonll.com/vaultfile-go/internal/crypto"
 )
 
 // VaultfileSecret represents a secret stored in the vaultfile

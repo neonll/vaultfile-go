@@ -28,7 +28,7 @@ Vaultfile solves the common problem of securely sharing secrets (API keys, passw
 ### From Source
 
 ```bash
-git clone https://github.com/jemmic/vaultfile-go.git
+git clone https://github.com/neonll/vaultfile-go.git
 cd vaultfile-go
 go build -o vaultfile ./cmd/vaultfile
 ```
@@ -36,7 +36,7 @@ go build -o vaultfile ./cmd/vaultfile
 ### Using Go Install
 
 ```bash
-go install jemmic.com/vaultfile-go/cmd/vaultfile@latest
+go install neonll.com/vaultfile-go/cmd/vaultfile@latest
 ```
 
 ## Quick Start
@@ -217,7 +217,7 @@ Use `vaultfile [command] --help` for detailed usage of each command.
 ### Building from Source
 
 ```bash
-git clone https://github.com/jemmic/vaultfile-go.git
+git clone https://github.com/neonll/vaultfile-go.git
 cd vaultfile-go
 go build ./cmd/vaultfile
 ```
@@ -254,4 +254,4 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## Support
 
-For issues, questions, or contributions, please visit the [GitHub repository](https://github.com/jemmic/vaultfile-go).
+For issues, questions, or contributions, please visit the [GitHub repository](https://github.com/neonll/vaultfile-go).

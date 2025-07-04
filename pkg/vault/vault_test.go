@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"jemmic.com/vaultfile-go/internal/crypto"
+	"neonll.com/vaultfile-go/internal/crypto"
 )
 
 func TestNewVaultfile(t *testing.T) {
