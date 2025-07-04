@@ -75,7 +75,9 @@ func init() {
 	registerKeyCmd.Flags().StringVar(&privateKeyName, "private-key-name", username, "The name of the private key to use")
 	registerKeyCmd.Flags().BoolVarP(&overwriteYes, "yes", "y", false, "Overwrite the key if it already exists")
 	registerKeyCmd.Flags().BoolVar(&overwriteNo, "no", false, "Do not overwrite the key if it already exists")
-	registerKeyCmd.MarkFlagRequired("key-name")
+	if err := registerKeyCmd.MarkFlagRequired("key-name"); err != nil {
+		panic(err)
+	}
 
 	// List keys command
 	listKeysCmd.Flags().StringVarP(&vaultfilePath, "file", "f", defaultVaultfilePath, "The path of the vaultfile to use")
@@ -86,13 +88,19 @@ func init() {
 	// Show key command
 	showKeyCmd.Flags().StringVarP(&vaultfilePath, "file", "f", defaultVaultfilePath, "The path of the vaultfile to use")
 	showKeyCmd.Flags().StringVar(&keyName, "key-name", "", "The name of the key to show")
-	showKeyCmd.MarkFlagRequired("key-name")
+	if err := showKeyCmd.MarkFlagRequired("key-name"); err != nil {
+		panic(err)
+	}
 
 	// Deregister key command
 	deregisterKeyCmd.Flags().StringVarP(&vaultfilePath, "file", "f", "", "The path of the vaultfile to use")
 	deregisterKeyCmd.Flags().StringVar(&keyName, "key-name", "", "The name of the key to remove")
-	deregisterKeyCmd.MarkFlagRequired("file")
-	deregisterKeyCmd.MarkFlagRequired("key-name")
+	if err := deregisterKeyCmd.MarkFlagRequired("file"); err != nil {
+		panic(err)
+	}
+	if err := deregisterKeyCmd.MarkFlagRequired("key-name"); err != nil {
+		panic(err)
+	}
 
 	// Add secret command
 	addSecretCmd.Flags().StringVarP(&vaultfilePath, "file", "f", "", "The path of the vaultfile to store the secret in")
@@ -101,8 +109,12 @@ func init() {
 	addSecretCmd.Flags().StringVar(&secretBase64, "base64-value", "", "The secret value as base64")
 	addSecretCmd.Flags().BoolVarP(&overwriteYes, "yes", "y", false, "Overwrite the secret if it already exists")
 	addSecretCmd.Flags().BoolVar(&overwriteNo, "no", false, "Do not overwrite the secret if it already exists")
-	addSecretCmd.MarkFlagRequired("file")
-	addSecretCmd.MarkFlagRequired("name")
+	if err := addSecretCmd.MarkFlagRequired("file"); err != nil {
+		panic(err)
+	}
+	if err := addSecretCmd.MarkFlagRequired("name"); err != nil {
+		panic(err)
+	}
 
 	// Read secret command
 	readSecretCmd.Flags().StringVarP(&vaultfilePath, "file", "f", "", "The path of the vaultfile to read from")
@@ -110,14 +122,22 @@ func init() {
 	readSecretCmd.Flags().StringVarP(&keyName, "key-name", "k", username, "The name of the private key to use")
 	readSecretCmd.Flags().StringVar(&keyFile, "key-file", "", "A file containing a private key")
 	readSecretCmd.Flags().BoolVar(&noEOL, "no-eol", false, "Do not print an end-of-line character")
-	readSecretCmd.MarkFlagRequired("file")
-	readSecretCmd.MarkFlagRequired("name")
+	if err := readSecretCmd.MarkFlagRequired("file"); err != nil {
+		panic(err)
+	}
+	if err := readSecretCmd.MarkFlagRequired("name"); err != nil {
+		panic(err)
+	}
 
 	// Delete secret command
 	deleteSecretCmd.Flags().StringVarP(&vaultfilePath, "file", "f", "", "The vaultfile to delete the secret from")
 	deleteSecretCmd.Flags().StringVar(&secretName, "name", "", "The name of the secret to delete")
-	deleteSecretCmd.MarkFlagRequired("file")
-	deleteSecretCmd.MarkFlagRequired("name")
+	if err := deleteSecretCmd.MarkFlagRequired("file"); err != nil {
+		panic(err)
+	}
+	if err := deleteSecretCmd.MarkFlagRequired("name"); err != nil {
+		panic(err)
+	}
 }
 
 var generateKeyCmd = &cobra.Command{
