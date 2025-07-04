@@ -34,8 +34,8 @@ ehthumbs.db
 Thumbs.db
 
 # Local development files
-vaultfile
-vaultfile.exe
+/vaultfile
+/vaultfile.exe
 debug
 debug.exe
 
