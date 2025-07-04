@@ -54,7 +54,7 @@ func TestGenerateAndSaveKey(t *testing.T) {
 	}
 
 	// Verify the keys match
-	if privateKey.PublicKey.N.Cmp(publicKey.N) != 0 || privateKey.PublicKey.E != publicKey.E {
+	if privateKey.N.Cmp(publicKey.N) != 0 || privateKey.E != publicKey.E {
 		t.Fatal("generated private and public keys don't match")
 	}
 }
